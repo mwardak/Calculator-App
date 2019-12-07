@@ -1,0 +1,82 @@
+.container{
+    border:1px #ccc solid;
+    padding:10px;
+    display: flex;
+    flex: 1;
+    /* flex-direction: column; */
+    /* flex-shrink: inherit; */
+    
+   } 
+
+
+
+.box-1{
+  border:1px #ccc solid;
+  padding:20px;
+  
+
+}
+
+  
+
+.box-2{
+    border:1px #ccc solid;
+    padding:20px;
+    
+}
+
+.box-3{
+    border:1px #ccc solid;
+    padding:20px;
+
+
+}
+
+.box-4{
+    border:1px #ccc solid;
+    padding:20px;
+
+    
+}
+
+.box-5{
+
+    border:1px #ccc solid;
+    padding:20px;
+    
+}
+
+.box-6{
+
+    border:1px #ccc solid;
+    padding:20px;
+    
+}
+
+.box-7{
+
+    border:1px #ccc solid;
+    padding:20px;
+    
+}
+
+.box-8{
+
+    border:1px #ccc solid;
+    padding:20px;
+    
+}
+
+.box-9{
+
+    border:1px #ccc solid;
+    padding:20px;
+    
+}
+
+.box-10{
+
+    border:1px #ccc solid;
+    padding:20px;
+    
+}
