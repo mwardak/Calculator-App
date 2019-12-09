@@ -1,28 +1,22 @@
-.container { 
-  
+.container {
   border: 8px solid rgb(26, 22, 22);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   flex: 1;
+  cursor: pointer;s
   /* height: 50%;
   width: 50%; */
-  
-  
 }
 
 input {
   display: flex;
 }
-.button{
-  /* font-variant-caps: normal; */
-  color: white;
+.button {
   background-color: #6f6f6f;
   border-bottom: black 2px solid;
   border-top: 2px #6f6f6f solid;
   
   
-
 }
-
