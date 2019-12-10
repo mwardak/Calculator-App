@@ -8,30 +8,28 @@
 
 
 // queryselector to get numbers,operators, equals, decimal, clear
- let numbers = document.querySelectorAll("numbers").value;
- const operators = document.querySelectorAll("operators");
- const equals = document.querySelector("equals");
- const decimal = document.querySelector("decimal");
- const clear = document.querySelector("clear");
- let result = document.querySelector("result")
+ let numbers = document.querySelectorAll(".numbers");
+ let operators = document.querySelectorAll(".operators");
+ let equals = document.querySelector(".equals");
+ let decimal = document.querySelector(".decimal");
+ let clear = document.querySelector(".clear");
+ let result = document.querySelector(".result")
 
-
+// result = numbers
+ 
 // // create eventlistner for buttons
-document.addEventListener("click", function(e){
-    for (i = 0; i < numbers.length; i++) {
-        result = numbers[i];
-        console.log(result);
-    // if (numbers){
+numbers.addEventListener("click", function(e){
+     
+    if (e.target.nodeName === "BUTTON")
+       e.target.numbers = value;
+
+     }
        
-    //    console.log(result);
+        
+    // }
    
     
-}
-
-
-    
-    
-
+// }
 
 
 });

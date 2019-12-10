@@ -1,5 +1,6 @@
 .container {
-  max-width: 200px;
+  max-width: 300px;
+  height: 250px;
   margin: 0 auto;
   border: 2px solid #111;
   border-radius: 5px;
@@ -16,22 +17,22 @@ input {
   cursor: pointer;
 }
 
-button.numbers {
+.numbers {
   border-bottom: black 2px solid;
   border-top: 2px #6f6f6f solid;
   cursor: pointer;
 }
- button.operators {
+.operators {
   border-bottom: rgba(221, 164, 57, 0.74) 2px solid;
   border-top: 2px #6f6f6f solid;
   cursor: pointer;
  }
- button.equals{
+.equals{
   border-bottom: black 2px solid;
   border-top: 2px #6f6f6f solid;
   cursor: pointer;
 }
-button.decimal{
+.decimal{
   border-bottom: black 2px solid;
   border-top: 2px #6f6f6f solid;
   cursor: pointer;
