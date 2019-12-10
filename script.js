@@ -20,7 +20,7 @@
 // // create eventlistner for buttons
 numbers.addEventListener("click", function(e){
      
-    if (e.target.nodeName === "BUTTON")
+    if (e.target.nodeName === "BUTTON"){
        e.target.numbers = value;
 
      }
