@@ -8,7 +8,7 @@
 
 
 // queryselector to get numbers,operators, equals, decimal, clear
- let numbers = document.querySelectorAll("numbers").values;
+ let numbers = document.querySelectorAll("numbers").value;
  const operators = document.querySelectorAll("operators");
  const equals = document.querySelector("equals");
  const decimal = document.querySelector("decimal");
@@ -18,7 +18,7 @@
 
 // // create eventlistner for buttons
 document.addEventListener("click", function(e){
-    for (i = 0; i < numbers .valu; i++) {
+    for (i = 0; i < numbers.length; i++) {
         result = numbers[i];
         console.log(result);
     // if (numbers){
