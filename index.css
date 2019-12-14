@@ -7,7 +7,6 @@
   background: #f6f6f6;
   padding-bottom: 30px;
   padding-top: 30px;
- 
 }
 
 input {
@@ -26,13 +25,13 @@ input {
   border-bottom: rgba(221, 164, 57, 0.74) 2px solid;
   border-top: 2px #6f6f6f solid;
   cursor: pointer;
- }
-.equals{
+}
+.equals {
   border-bottom: black 2px solid;
   border-top: 2px #6f6f6f solid;
   cursor: pointer;
 }
-.decimal{
+.decimal {
   border-bottom: black 2px solid;
   border-top: 2px #6f6f6f solid;
   cursor: pointer;
