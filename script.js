@@ -1,6 +1,9 @@
 //  let btn_9 = document.getElementById("btn_9");
 
 //  let decimal = document.querySelector(".decimal");
+let firstOperand = null;
+let secondOperand = null;
+let operation = null;
 
 // queryselectors and getelementbyID
 
@@ -14,21 +17,23 @@ let equals = document.getElementById("equals");
 // loop through operators and numbers and save it in a const
 
 for (let i = 0; i < operators.length; i++) {
-  const compute = operators[i];
-  console.log(compute);
+  let compute = operators[i];
 
   compute.addEventListener("click", function(e) {
-    if (result.value = compute) {
-        result.value = null;
-    } else {
-      
+    if (compute) {
+      // store the screen value as the first operand
+      firstOperand = result.value;
+      console.log(firstOperand);
+      // update the operator to be the current operation
+      operation = firstOperand + compute;
+      equals = operation;
+      console.log(equals);
     }
-    
   });
 }
 
 for (let i = 0; i < numbers.length; i++) {
-  const btns = numbers[i];
+  let btns = numbers[i];
 
   btns.addEventListener("click", function(e) {
     // check if display is equal to zero
@@ -36,17 +41,12 @@ for (let i = 0; i < numbers.length; i++) {
     if (result.value === "0") {
       // if it is, then set the display equal to the button's value
       result.value = e.target.value;
+      secondOperand = result.value;
+
       // else display more than double digits +
-    } else { 
+    } else {
       result.value += e.target.value;
     }
-  
-    // if (result.value) 
-    //     equals === e.target.value;
-    // } else {
-      
-    // }
-
   });
 }
 
