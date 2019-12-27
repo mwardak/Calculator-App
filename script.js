@@ -21,31 +21,43 @@ for (let i = 0; i < operators.length; i++) {
 
   compute.addEventListener("click", function(e) {
     if (compute) {
-      // store the screen value as the first operand
       firstOperand = result.value;
-      console.log(firstOperand);
-      // update the operator to be the current operation
       operation = firstOperand + compute;
-      equals = operation;
-      console.log(equals);
+      
+      // store the screen value as the first operand
+      // RULE 2: Whatever number is on screen will be saved as either
+      // a.) first operator
+      // b.) second operator
+      // PSEUDO CODE:
+      // if there is currently a current operation
+      // then store the current display in the second operand variable
+      // else
+      // store the current display in the first operand variable
     }
   });
 }
 
 for (let i = 0; i < numbers.length; i++) {
-  let btns = numbers[i];
+  let numberButton = numbers[i];
 
-  btns.addEventListener("click", function(e) {
+  numberButton.addEventListener("click", function(e) {
     // check if display is equal to zero
 
-    if (result.value === "0") {
-      // if it is, then set the display equal to the button's value
-      result.value = e.target.value;
-      secondOperand = result.value;
-
-      // else display more than double digits +
+    if (operation !== null) {
+      if (secondOperand === null) {
+        secondOperand = e.target.value;
+      } else {
+        secondOperand += e.target.value;
+      }
+      result.value = secondOperand;
     } else {
-      result.value += e.target.value;
+      if (firstOperand === null) {
+        firstOperand = e.target.value;
+      } else {
+        firstOperand += e.target.value;
+      }
+
+      result.value = firstOperand;
     }
   });
 }
