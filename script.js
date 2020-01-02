@@ -16,12 +16,27 @@ equals.addEventListener("click", function(e) {
   // do a math operation using first and second operand
   // display the result
 
+  // if (operation !== null) {
+  //   equals = parseFloat(firstOperand) x parseFloat(secondOperand);
+  //   result.value = equals;
+  // }
+
+  // if (operation !== null) {
+  //   equals = parseFloat(firstOperand) / parseFloat(secondOperand);
+  //   result.value = equals;
+  // }
   if (operation !== null) {
     equals = parseFloat(firstOperand) + parseFloat(secondOperand);
     result.value = equals;
   }
+
+  // if (operation !== null) {
+  //   equals = parseFloat(firstOperand) - parseFloat(secondOperand);
+  //   result.value = equals;
+  // }
+
 });
-// loop through operators and numbers and save it in a const
+// loop through operators and save it in a const
 for (let i = 0; i < operators.length; i++) {
   let operationButton = operators[i];
   operationButton.addEventListener("click", function(e) {
@@ -31,6 +46,8 @@ for (let i = 0; i < operators.length; i++) {
     }
   });
 }
+
+// loop through numbers and save it to a
 for (let i = 0; i < numbers.length; i++) {
   let numberButton = numbers[i];
   numberButton.addEventListener("click", function(e) {
@@ -39,6 +56,7 @@ for (let i = 0; i < numbers.length; i++) {
       setSecondOperand(e.target.value);
       result.value = secondOperand;
     } else {
+      
       setFirstOperand(e.target.value);
       result.value = firstOperand;
     }
@@ -62,5 +80,8 @@ function setSecondOperand(number) {
 clear.addEventListener("click", function(e) {
   if (clear) {
     result.value = "0";
+    firstOperand = null;
+    secondOperand = null;
+    operation = null;
   }
 });
