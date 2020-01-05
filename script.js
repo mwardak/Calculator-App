@@ -37,10 +37,12 @@ equals.addEventListener("click", function(e) {
   }
 
   if (firstOperand !== null && secondOperand !== null) {
-    operation += parseFloat(secondOperand);
-    result.value = operation;
-    console.log(operation);
-  }
+    
+    if (operation) {
+      result.value = secondOperand + operation;
+    }
+    
+}
 
 });
 // loop through operators and save it in a const
