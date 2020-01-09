@@ -2,7 +2,7 @@
 let firstOperand = null;
 let secondOperand = null;
 let operation = null;
-let lastOperation = null;
+
 
 // queryselectors and getelementbyID
 
@@ -20,7 +20,7 @@ equals.addEventListener("click", function(e) {
   if (operation === "x") {
     equals = parseFloat(firstOperand) * parseFloat(secondOperand);
     result.value = equals;
-  
+    
   }
   if (operation === "/") {
     equals = parseFloat(firstOperand) / parseFloat(secondOperand);
@@ -36,22 +36,20 @@ equals.addEventListener("click", function(e) {
     result.value = equals;
   }
 
-  if (firstOperand !== null && secondOperand !== null) {
-    
-    if (operation) {
-      result.value = secondOperand + operation;
-    }
-    
-}
-
 });
 // loop through operators and save it in a const
 for (let i = 0; i < operators.length; i++) {
   let operationButton = operators[i];
   operationButton.addEventListener("click", function(e) {
     if (operationButton) {
+
+      if (operation !== null) {
+        result.value += operation;
+        firstOperand = result.value;
+        secondOperand;
+  
+      }else{
       operation = e.target.value;
-   
     }
   });
 }
