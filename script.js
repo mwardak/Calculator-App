@@ -12,29 +12,34 @@ let operators = document.querySelectorAll(".operators");
 let result = document.getElementById("result");
 let clear = document.getElementById("clear");
 let equals = document.getElementById("equals");
+let decimal = document.getElementById("decimal")
+
+function performEquation(){
+  if (operation === "x") {
+    return parseFloat(firstOperand) * parseFloat(secondOperand);
+    
+    
+  }
+  if (operation === "/") {
+    return parseFloat(firstOperand) / parseFloat(secondOperand);
+    
+  }
+  if (operation === "+") {
+    return parseFloat(firstOperand) + parseFloat(secondOperand);
+    
+  
+  }
+  if (operation === "-") {
+    return parseFloat(firstOperand) - parseFloat(secondOperand);
+    
+  }
+}
 
 equals.addEventListener("click", function(e) {
   // do a math operation using first and second operand
   // display the result
-
-  if (operation === "x") {
-    equals = parseFloat(firstOperand) * parseFloat(secondOperand);
-    result.value = equals;
-    
-  }
-  if (operation === "/") {
-    equals = parseFloat(firstOperand) / parseFloat(secondOperand);
-    result.value = equals;
-  }
-  if (operation === "+") {
-    equals = parseFloat(firstOperand) + parseFloat(secondOperand);
-    result.value = equals;
-  
-  }
-  if (operation === "-") {
-    equals = parseFloat(firstOperand) - parseFloat(secondOperand);
-    result.value = equals;
-  }
+result.value = performEquation();
+ 
 
 });
 // loop through operators and save it in a const
@@ -44,11 +49,11 @@ for (let i = 0; i < operators.length; i++) {
     if (operationButton) {
 
       if (operation !== null) {
-        result.value += operation;
-        firstOperand = result.value;
-        secondOperand;
-  
-      }else{
+        firstOperand = performEquation();
+        result.value = firstOperand; 
+        secondOperand = null;
+      }
+
       operation = e.target.value;
     }
   });
