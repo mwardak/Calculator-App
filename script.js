@@ -12,27 +12,37 @@ let operators = document.querySelectorAll(".operators");
 let result = document.getElementById("result");
 let clear = document.getElementById("clear");
 let equals = document.getElementById("equals");
-let decimal = document.getElementById("decimal")
+let decimal = document.getElementById("decimal");
 
-function performEquation(){
+function includeDecimal(){
+  if(secondOperand === null) 
+   if (firstOperand !== null) {
+      firstOperand += ".";
+      
+}
+}
+
+decimal.addEventListener("click", function(e) {
+  result.value = includeDecimal();
+  
+});
+function performEquation() {
   if (operation === "x") {
     return parseFloat(firstOperand) * parseFloat(secondOperand);
-    
-    
   }
+  
   if (operation === "/") {
     return parseFloat(firstOperand) / parseFloat(secondOperand);
-    
   }
   if (operation === "+") {
     return parseFloat(firstOperand) + parseFloat(secondOperand);
-    
-  
   }
   if (operation === "-") {
     return parseFloat(firstOperand) - parseFloat(secondOperand);
-    
   }
+
+  
+
 }
 
 equals.addEventListener("click", function(e) {
@@ -49,9 +59,10 @@ for (let i = 0; i < operators.length; i++) {
     if (operationButton) {
 
       if (operation !== null) {
-        firstOperand = performEquation();
+        firstOperand = performEquation() + decimal;
         result.value = firstOperand; 
         secondOperand = null;
+        
       }
 
       operation = e.target.value;
