@@ -3,34 +3,36 @@ let firstOperand = null;
 let secondOperand = null;
 let operation = null;
 
-
 // queryselectors and getelementbyID
-
 let wrap = document.getElementById("wrap");
 let numbers = document.querySelectorAll(".numbers");
 let operators = document.querySelectorAll(".operators");
-let result = document.getElementById("result");
+let screen = document.getElementById("screen");
 let clear = document.getElementById("clear");
 let equals = document.getElementById("equals");
 let decimal = document.getElementById("decimal");
 
-function includeDecimal(){
-  if(secondOperand === null) 
-   if (firstOperand !== null) {
-      firstOperand += ".";
-      
-}
+// include decimal with operation
+function includeDecimal() {
+  if (operation === null) {
+    return (firstOperand += ".");
+  } 
+  if (operation !== null) {
+    return (secondOperand += ".");
+  }
 }
 
-decimal.addEventListener("click", function(e) {
-  result.value = includeDecimal();
-  
+// Click eventlistner for decimal
+decimal.addEventListener("click", function() {
+  screen.value = includeDecimal();
 });
+
+// operation function
 function performEquation() {
   if (operation === "x") {
     return parseFloat(firstOperand) * parseFloat(secondOperand);
   }
-  
+
   if (operation === "/") {
     return parseFloat(firstOperand) / parseFloat(secondOperand);
   }
@@ -40,29 +42,22 @@ function performEquation() {
   if (operation === "-") {
     return parseFloat(firstOperand) - parseFloat(secondOperand);
   }
-
-  
-
 }
 
+// Click eventlistner for equals
 equals.addEventListener("click", function(e) {
-  // do a math operation using first and second operand
-  // display the result
-result.value = performEquation();
  
-
+  screen.value = performEquation();
 });
 // loop through operators and save it in a const
 for (let i = 0; i < operators.length; i++) {
   let operationButton = operators[i];
   operationButton.addEventListener("click", function(e) {
     if (operationButton) {
-
       if (operation !== null) {
-        firstOperand = performEquation() + decimal;
-        result.value = firstOperand; 
+        firstOperand = performEquation();
+        screen.value = firstOperand;
         secondOperand = null;
-        
       }
 
       operation = e.target.value;
@@ -70,21 +65,21 @@ for (let i = 0; i < operators.length; i++) {
   });
 }
 
-// loop through numbers and save it to a
+// Click event listner for numbers. Loop through numbers. set first and second operand
 for (let i = 0; i < numbers.length; i++) {
   let numberButton = numbers[i];
   numberButton.addEventListener("click", function(e) {
-    
     if (operation !== null) {
       setSecondOperand(e.target.value);
-      result.value = secondOperand;
+      screen.value = secondOperand;
     } else {
-      
       setFirstOperand(e.target.value);
-      result.value = firstOperand;
+      screen.value = firstOperand;
     }
   });
 }
+
+// First operand
 function setFirstOperand(number) {
   if (firstOperand === null) {
     firstOperand = number;
@@ -92,6 +87,8 @@ function setFirstOperand(number) {
     firstOperand += number;
   }
 }
+
+// Second operand
 function setSecondOperand(number) {
   if (secondOperand === null) {
     secondOperand = number;
@@ -99,10 +96,10 @@ function setSecondOperand(number) {
     secondOperand += number;
   }
 }
-// clear button
+// Click event listner for clear
 clear.addEventListener("click", function(e) {
   if (clear) {
-    result.value = "0";
+    screen.value = "0";
     firstOperand = null;
     secondOperand = null;
     operation = null;
