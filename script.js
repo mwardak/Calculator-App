@@ -16,7 +16,7 @@ let decimal = document.getElementById("decimal");
 function includeDecimal() {
   if (operation === null) {
     return (firstOperand += ".");
-  } 
+  }
   if (operation !== null) {
     return (secondOperand += ".");
   }
@@ -46,7 +46,6 @@ function performEquation() {
 
 // Click eventlistner for equals
 equals.addEventListener("click", function(e) {
- 
   screen.value = performEquation();
 });
 // loop through operators and save it in a const
