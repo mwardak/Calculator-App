@@ -6,7 +6,7 @@ _HTML_-_CSS_-_JAVASCRIPT_
 
 <br>
 
-To view the clock, click here -->(http://mwardak.github.io/calculator-app) 
+To view the clock, click here -->(http://mwardak.github.io/Calculator-App) 
 
 <br>
 
