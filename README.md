@@ -10,7 +10,7 @@ To view the clock, click here -->(http://mwardak.github.io/Calculator-App)
 
 <br>
 
-![picture](calculator new design.PNG)
+![picture](calculator.PNG)
 
 
 
