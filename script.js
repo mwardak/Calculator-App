@@ -48,7 +48,7 @@ function performEquation() {
 equals.addEventListener("click", function(e) {
   screen.value = performEquation();
 });
-// loop through operators and save it in a const
+// Loop through operators and save it in a const
 for (let i = 0; i < operators.length; i++) {
   let operationButton = operators[i];
   operationButton.addEventListener("click", function(e) {
