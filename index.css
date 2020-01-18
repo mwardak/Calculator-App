@@ -1,12 +1,19 @@
+body{
+  background-color: #fafae8;
+}
+
+
 .container {
-  max-width: 300px;
-  height: 250px;
+  max-width: 245px;
+  height: 280px;
   margin: 0 auto;
-  border: 2px solid #111;
-  border-radius: 5px;
-  background: #f6f6f6;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  border: 2px solid #1111118c;
+  border-radius: 15px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color:#e9f6f6ba;
+
+  
 }
 
 input {
@@ -15,25 +22,53 @@ input {
   box-shadow: inset 0px 0px 3px 0px black;
   cursor: pointer;
   text-align: right;
+  border-radius: 15px;
+  margin-left: 14px;
+  margin-bottom: 5px;
 }
 
 .numbers {
-  border-bottom: black 2px solid;
-  border-top: 2px #6f6f6f solid;
+
   cursor: pointer;
+  font-style: oblique;
+  border-radius: 15px;
+  border-image-outset: 0px;
+  background-color: #3a5a554d;
+  margin-left: 6px;
+  -webkit-tap-highlight-color: rgba(207, 159, 159, 0);
+  
+  
 }
 .operators {
-  border-bottom: rgba(221, 164, 57, 0.74) 2px solid;
-  border-top: 2px #6f6f6f solid;
+ 
   cursor: pointer;
+  border-radius: 15px;
+  margin-left: 6px;
+  background-color: #438484;
+  font-size: medium;
 }
-.equals {
-  border-bottom: black 2px solid;
-  border-top: 2px #6f6f6f solid;
+.equal {
+  
   cursor: pointer;
+  border-radius: 15px;
+  margin-left: 6px;
+  font-size: medium;
+  background-color: #438484;
 }
-.decimal {
-  border-bottom: black 2px solid;
-  border-top: 2px #6f6f6f solid;
+.dot {
+  
   cursor: pointer;
+  border-radius: 15px;
+  margin-left: 6px;
+  font-size: medium;
+  background-color: #3a5a554d;
+}
+
+.clears{
+  
+  cursor: pointer;
+  border-radius: 15px;
+  margin-left: 15px;
+  font-size: medium;
+  background-color: #61ce924d;
 }
