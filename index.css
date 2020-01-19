@@ -1,7 +1,6 @@
-body{
+body {
   background-color: #fafae8;
 }
-
 
 .container {
   max-width: 245px;
@@ -11,9 +10,7 @@ body{
   border-radius: 15px;
   padding-bottom: 20px;
   padding-top: 20px;
-  background-color:#e9f6f6ba;
-
-  
+  background-color: #e9f6f6ba;
 }
 
 input {
@@ -25,22 +22,18 @@ input {
   border-radius: 15px;
   margin-left: 14px;
   margin-bottom: 5px;
+  font-size: 26px;
 }
 
 .numbers {
-
   cursor: pointer;
   font-style: oblique;
   border-radius: 15px;
   border-image-outset: 0px;
   background-color: #3a5a554d;
   margin-left: 6px;
-  -webkit-tap-highlight-color: rgba(207, 159, 159, 0);
-  
-  
 }
 .operators {
- 
   cursor: pointer;
   border-radius: 15px;
   margin-left: 6px;
@@ -48,7 +41,6 @@ input {
   font-size: medium;
 }
 .equal {
-  
   cursor: pointer;
   border-radius: 15px;
   margin-left: 6px;
@@ -56,7 +48,6 @@ input {
   background-color: #438484;
 }
 .dot {
-  
   cursor: pointer;
   border-radius: 15px;
   margin-left: 6px;
@@ -64,8 +55,7 @@ input {
   background-color: #3a5a554d;
 }
 
-.clears{
-  
+.clears {
   cursor: pointer;
   border-radius: 15px;
   margin-left: 15px;
