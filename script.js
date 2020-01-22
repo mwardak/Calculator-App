@@ -3,14 +3,67 @@ let firstOperand = null;
 let secondOperand = null;
 let operation = null;
 
-// queryselectors and getelementbyID
-let wrap = document.getElementById("wrap");
+// Click eventlistner for decimal button
+let decimalButton = document.getElementById("decimal");
+decimalButton.addEventListener("click", function() {
+  setDisplay(includeDecimal());
+});
+
+// Click eventlistner for equals button
+let equalsButton = document.getElementById("equals");
+equalsButton.addEventListener("click", function(e) {
+  setDisplay(performEquation());
+});
+
+// Click event listner for clear button
+let clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", function(e) {
+  
+    setDisplay("0");
+    firstOperand = null;
+    secondOperand = null;
+    operation = null;
+  
+});
+
+// Click event listner for operator buttons
+let operatorButtons = document.querySelectorAll(".operators");
+for (let i = 0; i < operatorButtons.length; i++) {
+  let operationButton = operatorButtons[i];
+  operationButton.addEventListener("click", function(e) {
+    
+      if (operation !== null) {
+        firstOperand = performEquation();
+        setDisplay(firstOperand);
+        secondOperand = null;
+      }
+
+      operation = e.target.value;
+    
+  });
+}
+
+// Click event listner for numbers
 let numbers = document.querySelectorAll(".numbers");
-let operators = document.querySelectorAll(".operators");
-let screen = document.getElementById("screen");
-let clear = document.getElementById("clear");
-let equals = document.getElementById("equals");
-let decimal = document.getElementById("decimal");
+for (let i = 0; i < numbers.length; i++) {
+  let numberButton = numbers[i];
+  numberButton.addEventListener("click", function(e) {
+    if (operation !== null) {
+      setSecondOperand(e.target.value);
+      setDisplay(secondOperand);
+    } else {
+      setFirstOperand(e.target.value);
+      setDisplay(firstOperand);
+    }
+  });
+}
+
+
+
+function setDisplay(args) {
+  let screen = document.getElementById("screen");
+  screen.value = args;
+}
 
 // include decimal with operation
 function includeDecimal() {
@@ -22,12 +75,6 @@ function includeDecimal() {
   }
 }
 
-// Click eventlistner for decimal
-decimal.addEventListener("click", function() {
-  screen.value = includeDecimal();
-});
-
-// operation function
 function performEquation() {
   if (operation === "x") {
     return parseFloat(firstOperand) * parseFloat(secondOperand);
@@ -44,41 +91,6 @@ function performEquation() {
   }
 }
 
-// Click eventlistner for equals
-equals.addEventListener("click", function(e) {
-  screen.value = performEquation();
-});
-// Loop through operators and save it in a const
-for (let i = 0; i < operators.length; i++) {
-  let operationButton = operators[i];
-  operationButton.addEventListener("click", function(e) {
-    if (operationButton) {
-      if (operation !== null) {
-        firstOperand = performEquation();
-        screen.value = firstOperand;
-        secondOperand = null;
-      }
-
-      operation = e.target.value;
-    }
-  });
-}
-
-// Click event listner for numbers. Loop through numbers. set first and second operand
-for (let i = 0; i < numbers.length; i++) {
-  let numberButton = numbers[i];
-  numberButton.addEventListener("click", function(e) {
-    if (operation !== null) {
-      setSecondOperand(e.target.value);
-      screen.value = secondOperand;
-    } else {
-      setFirstOperand(e.target.value);
-      screen.value = firstOperand;
-    }
-  });
-}
-
-// First operand
 function setFirstOperand(number) {
   if (firstOperand === null) {
     firstOperand = number;
@@ -87,7 +99,6 @@ function setFirstOperand(number) {
   }
 }
 
-// Second operand
 function setSecondOperand(number) {
   if (secondOperand === null) {
     secondOperand = number;
@@ -95,12 +106,3 @@ function setSecondOperand(number) {
     secondOperand += number;
   }
 }
-// Click event listner for clear
-clear.addEventListener("click", function(e) {
-  if (clear) {
-    screen.value = "0";
-    firstOperand = null;
-    secondOperand = null;
-    operation = null;
-  }
-});
